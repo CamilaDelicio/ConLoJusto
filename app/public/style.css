@@ -1,0 +1,33 @@
+h1{
+    color: whitesmoke;
+}
+
+body{
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    font-size: large;
+}
+.Formulario{
+    width: 500px;
+}
+.Formulario{
+    font-display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+form+p{
+    text-align: center;
+
+}
+.sr-only{
+    position:absolute;
+    left:-1000px;
+    top:auto;
+    width: 1px;
+    height: 1px;;
+    overflow: hidden;
+}
