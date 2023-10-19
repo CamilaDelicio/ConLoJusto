@@ -1,6 +1,9 @@
 h1{
     color: whitesmoke;
 }
+p{
+    color: white;
+}
 
 body{
     margin: 0;
@@ -13,16 +16,38 @@ body{
 }
 .Formulario{
     width: 500px;
+    background-color:chocolate;
+    border-radius: 10px;
+    padding: 50px;
 }
-.Formulario{
+form{
     font-display: flex;
     flex-direction: column;
     gap: 10px;
 }
-form+p{
+form + p{
     text-align: center;
 
 }
+input,button{
+    border-radius: 4px;
+    border: unset;
+    padding: 5px 10px;
+    font-size: large;
+}
+button{
+    background-color: white;
+    color:black;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: relative;
+    left: 180px;
+    top: 10px;
+}
+h5{
+    font-family: cursive;
+}
+
 .sr-only{
     position:absolute;
     left:-1000px;
@@ -31,3 +56,4 @@ form+p{
     height: 1px;;
     overflow: hidden;
 }
+
