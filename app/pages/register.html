@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name=" viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarme</title>
-    <link rel="stylesheet"  href="style.css">
-    <script src="Login.js" defer></script>
+    <link rel="stylesheet"  href="styleregister.css">
+    <script src="register.js" defer></script>
     <style>
         body {
             background-image: url(LoginFondo.jpg);
@@ -19,17 +19,20 @@
 </head>
 <body>
     <main>
-        <div class="Formulario">
-            <h1>Registrarse</h1>
-            <p>Ingrese sus datos:</p>
-            <form id="Login">
+        <div class="Formulario-Register">
+            <h1>Crear cuenta</h1>
+            <form id="Register">
                 <label for="usuario" class="sr-only">Usuario</label>
                 <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario">
+                <label for="e-mail" class="sr-only">E-mail</label>
+                <input type="text" name="" id="e-mail" placeholder="Ingrese su E-mail">
                 <label for="contraseña" class="sr-only">Contraseña</label>
                 <input type="text" name="contraseña" id="contraseña" placeholder="Ingrese contraseña">
-                <button type="submit">Iniciar Sesión</button>
+                <label for="usuario" class="sr-only">Confirmar Contraseña</label>
+                <input type="text" name="confirmar contraseña" id="usuario" placeholder="Confirmar Contraseña">
+                <button type="submit">Crear Cuenta</button>
             </form>
-            <p>¿Todavía no tenés una cuenta? Registrate - <a href= "register.html">"Registrarme"</a></p>
+            <p>¿Ya tenés una cuenta?- <a href= "login.html">Iniciar Sesión</a></p>
         </div>
     
     </main>

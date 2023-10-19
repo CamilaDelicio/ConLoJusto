@@ -1,71 +1,51 @@
 body{
     margin: 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     display: flex; /*centra todo*/
     justify-content: center; /*centra en eje principal*/
     align-items: center;/*centrar en el eje vertial*/
     min-height: 100svh; /*altura de la pantalla*/
-    font-size: large;/*Agranda la fuente*/
+    font-size: large;/*Agranda la fuente de todo el ody*/
 }
 h1{
-    color: whitesmoke;
-}
-p{
     color: white;
-}
-
-.Formulario{
-    width: 500px;
-    background-color:chocolate;
-    border-radius: 10px;
-    padding: 50px;
-}
-form{
-    font-display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-form + p{
-    text-align: center;
-    font-family: cursive;
-    color: white;
-
-}
-input,button{
-    border-radius: 4px;
-    border: unset;
-    padding: 5px 10px;
-    font-size: large;
-}
-button{
-    background-color: white;
-    color:black;
-    cursor: pointer;
-    padding: 5px 10px;
     position: relative;
-    left: 180px;
-    top: 10px;
-}
-.sr-only{ 
-    position:absolute;
-    left:-1000px;
-    top:auto;
-    width: 1px;
-    height: 1px;;
-    overflow: hidden;
+    left: 30px;
+    top: -40px;
 }
 .Formulario-Register{
-    width: 500px;
+    width: 190px;
     background-color:chocolate;
     border-radius: 10px;
     padding: 50px;
     
+}
+form{
+    
+    font-display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    position: relative;
+    left: px;
+    top: -40px;
+    
+}
+
+form+p{
+    text-align: center;
+    font-family: cursive;
+    color: white;
+    position: relative;
+    left: 0px;
+    top: 20px;
 }
 form + input, button{
     border-radius: 4px;
     border: unset;
     padding: 5px 10px;
     font-size: large;
+    position: relative;
 }
 button{
     background-color: white;
@@ -73,6 +53,6 @@ button{
     cursor: pointer;
     padding: 5px 10px;
     position: relative;
-    left: 180px;
-    top: 10px;
+    left: 25px;
+    top: 50px;
 }
