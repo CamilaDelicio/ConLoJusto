@@ -1,53 +1,32 @@
 import "reflect-metadata";
-import express from "express";
-import morgan from "morgan";
-import cors from "cors";
+import "express-async-errors";
+import express, { Request, Response, NextFunction } from "express";
 import path from "path";
-import { UserRouter } from "./user/user.router";
-import { ConfigServer } from "./config/config";
-import { DataSource } from "typeorm";
+import { router } from "./routes";
+import "./database";
 
-class ServerBootstrap extends ConfigServer {
-  public app: express.Application = express();
-  private port: number = this.getNumberEnv("PORT");
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(router);
 
-  constructor() {
-    super();
-    this.app.use(express.json());
-    this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(morgan("dev"));
-    this.app.use(cors());
-
-    // Establece EJS como el motor de vistas
-    this.app.set("view engine", "ejs");
-    this.app.set("views", path.join(__dirname, "..", "views"));
-    this.app.use(express.static(path.join(__dirname, "..", "public")));
-    // ruter
-    this.app.use("/", this.routers());
-
-    this.dbConnect();
-    this.listen();
-  }
-
-  routers(): Array<express.Router> {
-    return [new UserRouter().router];
-  }
-
-  async dbConnect(): Promise<DataSource | void> {
-    return this.initConnect
-      .then(() => {
-        console.log("Connect db Success");
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
-  public listen() {
-    this.app.listen(this.port, () => {
-      console.log("Server listening on port " + this.port);
+app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
+  if (err instanceof Error) {
+    return response.status(400).json({
+      error: err.message,
     });
   }
-}
 
-new ServerBootstrap();
+  return response.status(500).json({
+    status: "error",
+    message: "Internal Server Error",
+  });
+});
+
+app.use(express.static(path.join(__dirname, "..", "public")));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "..", "views"));
+
+app.listen(3000, () => {
+  console.log("Server is running at port 3000");
+});
