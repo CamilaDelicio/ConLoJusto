@@ -21,7 +21,7 @@ class CreateUserController {
       });
     } catch (err) {
       response.render("message", {
-        message: `Error al crear usuário: ${err.message}`
+        message: "Error al crear usuário: ${err.message}"
       });
     }
 

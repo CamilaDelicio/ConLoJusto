@@ -1,0 +1,27 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+const express_1 = require("express");
+const CreateUserController_1 = require("./controllers/CreateUserController");
+const DeleteUserController_1 = require("./controllers/DeleteUserController");
+const GetUserDataController_1 = require("./controllers/GetUserDataController");
+const ListUsersController_1 = require("./controllers/ListUsersController");
+const SearchUserController_1 = require("./controllers/SearchUserController");
+const UpdateUserController_1 = require("./controllers/UpdateUserController");
+const router = (0, express_1.Router)();
+exports.router = router;
+const createUserController = new CreateUserController_1.CreateUserController();
+const searchUserController = new SearchUserController_1.SearchUserController();
+const updateUserController = new UpdateUserController_1.UpdateUserController();
+const deleteUserController = new DeleteUserController_1.DeleteUserController();
+const listUsersController = new ListUsersController_1.ListUsersController();
+const getUserDataController = new GetUserDataController_1.GetUserDataController();
+router.get("/", listUsersController.handle);
+router.get("/add", (request, response) => {
+    response.render("add");
+});
+router.post("/add-user", createUserController.handle);
+router.get("/search", searchUserController.handle);
+router.get("/edit", getUserDataController.handle);
+router.post("/edit-user", updateUserController.handle);
+router.post("/delete-user", deleteUserController.handle);

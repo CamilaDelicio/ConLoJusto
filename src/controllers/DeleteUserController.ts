@@ -15,7 +15,7 @@ class DeleteUserController {
       });
     } catch (err) {
       response.render("message", {
-        message: `Error al eliminar usuario: ${err.message}`
+        message: "Error al eliminar usuario: ${err.message}"
       });
     }
   }
