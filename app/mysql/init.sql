@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     nombre_usuario VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
     contrasena VARCHAR(255) NOT NULL,
-    confirmar_contrasena VARCHAR(255) NOT NULL
+    confirmar_contraseña VARCHAR(255) NOT NULL
 );
 
 INSERT INTO usuarios (nombre_usuario, email, contrasena, confirmar_contrasena) 
